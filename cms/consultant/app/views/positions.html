@@ -1,0 +1,53 @@
+﻿
+<div ng-controller="positionsController">
+
+
+    <div class="row">
+
+        <div style="margin-top:40px">
+            <div class="col-lg-10">
+
+                <span style="font-size:30px">Positions</span>
+
+            </div>
+            <div class="col-lg-2">
+
+                <a ui-sref="dashboard.newjd" tooltip="Create new Job positions" tooltip-placement="left" class="btn btn-primary"> <span class="fa fa-upload"></span>&nbsp; Upload JD</a>
+            </div>
+
+
+            <!-- /.col-lg-12 -->
+        </div>
+
+
+    </div>
+    <hr>
+
+    <table class="table table-bordered table-hover table-responsive" cellpadding="2">
+
+        <thead>
+            <tr>
+                <th>Positions</th>
+                <th>Status</th>
+                <th>CV</th>
+
+            </tr>
+        </thead>
+        <tr ng-repeat="job in jd">
+
+            <td><a ui-sref="dashboard.job({jobId:job.id})">{{job.position}}</a> </td>
+            <td>
+               
+
+              <toggle ng-model="job.status" on="Open" off="Closed" ></toggle>
+            </td>
+            <td>{{job.cv}}</td>
+
+
+        </tr>
+
+        
+    </table>
+   
+</div>
+<!--if any problem ,uncomment the file angular-bootstrap-toggle.css-->

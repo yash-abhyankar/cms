@@ -1,0 +1,47 @@
+﻿
+<div style="padding-top:40px">
+    <div class="col-lg-8">
+
+        <span style="font-size:30px"> My Positions</span>
+
+    </div>
+    <div class="col-lg-4">
+        <input class="form-control" placeholder="Search" type="text" ng-model="search" />
+
+    </div>
+    <br />
+    <br />
+
+    <table style="margin-top:25px" class="table table-bordered table-hover table-responsive" cellpadding="2">
+
+        <thead>
+            <tr>
+                <th>Positions</th>
+                <th>Posted On</th>
+                <th>New Candidaes</th>
+                <th>Interview Stage</th>
+                <th>Interview Feedback Awaited</th>
+                <th>Offered</th>
+                <th>Joined</th>
+                <th>All</th>
+
+            </tr>
+        </thead>
+        <tr ng-repeat="job in jd | filter:search" >
+
+            <td>{{job.position}}</td>
+            <td>{{job.postedOn}}</td>
+            <td>{{job.newCandidates}}</td>
+            <td>{{job.InterviewStage}}</td>
+            <td>{{job.InterviewFeedbackAwaited}}</td>
+            <td>{{job.offered}}</td>
+            <td>{{job.joined}}</td>
+            <td>{{job.all}}</td>
+         
+           
+
+        </tr>
+
+    </table>
+
+</div>

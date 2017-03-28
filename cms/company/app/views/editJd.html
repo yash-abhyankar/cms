@@ -1,0 +1,502 @@
+﻿<div class="row" ng-controller="editJdController">
+    <div class="col-lg-12">
+        <h2 class="page-header">Edit Position</h2>
+    </div>
+</div>
+<form role="form">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Job Description
+        </div>
+        <div class="panel-body">
+
+            <div class="row">
+                <div class="col-lg-6">
+
+                    <div class="form-group">
+                        <label>What role would you like to hire?</label><span style="color:red">*</span>
+                        <input class="form-control" placeholder="e.g Software Engineer" ng-model="job.position" required>
+                    </div>
+
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>Location</label><span style="color:red">*</span>
+                        <input class="form-control" placeholder="Job Location" ng-model="job.jobLocation" required>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>Vacancies</label><span style="color:red">*</span>
+                        <input type="number" placeholder="Number of vacancies" ng-model="job.vacancy" class="form-control">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>CTC Offered(Lakhs)</label><span style="color:red">*</span><label></label><span style="color:red"></span>
+                        <input type="number" class="form-control" placeholder="Min Annual CTC" ng-model="job.minSalary" />
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <input type="number" class="form-control" placeholder="Max Annual CTC" ng-model="job.maxSalary">
+
+                    </div>
+                </div>
+
+
+
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>Experience(Years)</label><span style="color:red">*</span>
+                        <input type="number" class="form-control" placeholder="Min Experience" ng-model="job.minExperience">
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <input type="number" class="form-control" placeholder="Max Experience" ng-model="job.maxExperience">
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>Qualifications</label>
+
+                        <div style="margin-bottom:10px">
+                            <span ng-repeat="qualify in qualification" style="border:1px solid cornflowerblue;margin:5px;padding: 3px 10px">{{qualify}} <a ui-sref="dashboard.editJd" ng-click="removeQualification(qualify)">×</a></span>
+                        </div>
+
+                        <input class="form-control" placeholder="Degree" ng-model="inputQualification" my-enter="addQualification()">
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="form-group">
+                        <label>Target Educational Insititutions for Sourcing</label>
+
+                        <div style="margin-bottom:10px">
+                            <span ng-repeat="institute in educationalIns" style="border:1px solid cornflowerblue;margin:5px;padding: 3px 10px">{{institute}} <a ui-sref="dashboard.editJd" ng-click="removeInstitute(institute)">×</a></span>
+                        </div>
+
+                        <input class="form-control" placeholder="Target Institutions (if any)" ng-model="inputInstitute" my-enter="addInstitute()">
+                    </div>
+
+
+
+                </div>
+
+            </div>
+            <div class="row">
+
+                <div class="col-lg-12">
+
+                    <div class="form-group">
+                        <label>Target Industries for Sourcing</label>
+
+                        <br />
+                        <div style="margin-bottom:10px">
+                            <span ng-repeat="industry in selectedIndustries" style="border:1px solid cornflowerblue;margin:10px;padding: 3px 10px">{{industry}} <a ui-sref="dashboard.editJd" ng-click="removeIndustry(industry)">×</a></span>
+                        </div>
+                        <div>
+
+
+                            <select class="form-control" ng-model="selectedIndustry" ng-options="x for x in names" ng-change="addIndustry()">
+                                <option value="" disabled selected>  Target Industries (if any) </option>
+                            </select>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>Target Companies for Sourcing</label>
+                        <div style="margin-bottom:10px">
+                            <span ng-repeat="company in companies" style="border:1px solid cornflowerblue;margin:5px;padding: 3px 10px">{{company}} <a ui-sref="dashboard.editJd" ng-click="removeCompany(company)">×</a></span>
+                        </div>
+                        <input class="form-control" placeholder="Target Companies (if any)" ng-model="inputCompany" my-enter="addCompany()">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="form-group">
+                        <label>
+                            Duties and Responsibilities
+                        </label>
+                        <div id="duties">
+                            {{job.duties}}
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div class="row">
+
+
+                <div class="col-lg-6">
+
+                    <div class="form-group">
+                        <label>Skills</label>
+                        (Must Have)
+
+
+                        <input class="form-control" placeholder="Required Skills" ng-model="inputSkill" my-enter="addSkill()">
+
+                        <div style="margin-top:10px">
+                            <span ng-repeat="skill in mustSkills" style="border:1px solid cornflowerblue;margin:5px;padding: 3px 10px">{{skill}} <a ui-sref="dashboard.editJd" ng-click="removeSkill(skill)">×</a></span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>Skills</label>
+                        (Optional)
+                        <input class="form-control" placeholder="Optional Skills" ng-model="inputoptSkill" my-enter="addoptSkill()">
+                        <div style="margin-top:10px">
+                            <span ng-repeat="skill in optSkills" style="border:1px solid cornflowerblue;margin:5px;padding: 3px 10px">{{skill}} <a ui-sref="dashboard.editJd" ng-click="removeoptSkill(skill)">×</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Additional Details
+        </div>
+
+
+        <div class="panel-body">
+            <div class="row">
+
+                <div class="col-lg-12">
+
+                    <div class="form-group">
+                        <label>
+                            Perks, Incentives, ESOP's and Compensation details
+                        </label>
+                        <div id="additional">
+                            {{job.incentives}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>Working Days</label>
+                        <select ng-model="job.workingDays" class="form-control">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+
+
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <label>Working Hours</label>
+                        <select class="form-control" ng-model="job.workingHoursStart">
+                            <option value="00">12:00 AM</option>
+                            <option value="00:30">12:30 AM</option>
+                            <option value="01">1:00 AM</option>
+                            <option value="01:30">1:30 AM</option>
+                            <option value="02">2:00 AM</option>
+                            <option value="02:30">2:30 AM</option>
+                            <option value="03">3:00 AM</option>
+                            <option value="03:30">3:30 AM</option>
+                            <option value="04">4:00 AM</option>
+                            <option value="04:30">4:30 AM</option>
+                            <option value="05">5:00 AM</option>
+                            <option value="05:30">5:30 AM</option>
+                            <option value="06">6:00 AM</option>
+                            <option value="06:30">6:30 AM</option>
+                            <option value="07">7:00 AM</option>
+                            <option value="07:30">7:30 AM</option>
+                            <option value="08">8:00 AM</option>
+                            <option value="08:30">8:30 AM</option>
+                            <option value="09">9:00 AM</option>
+                            <option value="09:30">9:30 AM</option>
+                            <option value="10">10:00 AM</option>
+                            <option value="10:30">10:30 AM</option>
+                            <option value="11">11:00 AM</option>
+                            <option value="11:30">11:30 AM</option>
+                            <option value="12">12:00 PM</option>
+                            <option value="12:30">12:30 PM</option>
+                            <option value="13">1:00 PM</option>
+                            <option value="13:30">1:30 PM</option>
+                            <option value="14">2:00 PM</option>
+                            <option value="14:30">2:30 PM</option>
+                            <option value="15">3:00 PM</option>
+                            <option value="15:30">3:30 PM</option>
+                            <option value="16">4:00 PM</option>
+                            <option value="16:30">4:30 PM</option>
+                            <option value="17">5:00 PM</option>
+                            <option value="17;30">5:30 PM</option>
+                            <option value="18">6:00 PM</option>
+                            <option value="18:30">6:30 PM</option>
+                            <option value="19">7:00 PM</option>
+                            <option value="19:30">7:30 PM</option>
+                            <option value="20">8:00 PM</option>
+                            <option value="20:30">8:30 PM</option>
+                            <option value="21">9:00 PM</option>
+                            <option value="21:30">9:30 PM</option>
+                            <option value="22">10:00 PM</option>
+                            <option value="22:30">10:30 PM</option>
+                            <option value="23">11:00 PM</option>
+                            <option value="23:30">11:30 PM</option>
+
+
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <select class="form-control" ng-model="job.workingHoursEnd">
+                            <option value="00">12:00 AM</option>
+                            <option value="00:30">12:30 AM</option>
+                            <option value="01">1:00 AM</option>
+                            <option value="01:30">1:30 AM</option>
+                            <option value="02">2:00 AM</option>
+                            <option value="02:30">2:30 AM</option>
+                            <option value="03">3:00 AM</option>
+                            <option value="03:30">3:30 AM</option>
+                            <option value="04">4:00 AM</option>
+                            <option value="04:30">4:30 AM</option>
+                            <option value="05">5:00 AM</option>
+                            <option value="05:30">5:30 AM</option>
+                            <option value="06">6:00 AM</option>
+                            <option value="06:30">6:30 AM</option>
+                            <option value="07">7:00 AM</option>
+                            <option value="07:30">7:30 AM</option>
+                            <option value="08">8:00 AM</option>
+                            <option value="08:30">8:30 AM</option>
+                            <option value="09">9:00 AM</option>
+                            <option value="09:30">9:30 AM</option>
+                            <option value="10">10:00 AM</option>
+                            <option value="10:30">10:30 AM</option>
+                            <option value="11">11:00 AM</option>
+                            <option value="11:30">11:30 AM</option>
+                            <option value="12">12:00 PM</option>
+                            <option value="12:30">12:30 PM</option>
+                            <option value="13">1:00 PM</option>
+                            <option value="13:30">1:30 PM</option>
+                            <option value="14">2:00 PM</option>
+                            <option value="14:30">2:30 PM</option>
+                            <option value="15">3:00 PM</option>
+                            <option value="15:30">3:30 PM</option>
+                            <option value="16">4:00 PM</option>
+                            <option value="16:30">4:30 PM</option>
+                            <option value="17">5:00 PM</option>
+                            <option value="17;30">5:30 PM</option>
+                            <option value="18">6:00 PM</option>
+                            <option value="18:30">6:30 PM</option>
+                            <option value="19">7:00 PM</option>
+                            <option value="19:30">7:30 PM</option>
+                            <option value="20">8:00 PM</option>
+                            <option value="20:30">8:30 PM</option>
+                            <option value="21">9:00 PM</option>
+                            <option value="21:30">9:30 PM</option>
+                            <option value="22">10:00 PM</option>
+                            <option value="22:30">10:30 PM</option>
+                            <option value="23">11:00 PM</option>
+                            <option value="23:30">11:30 PM</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>Job Functional Area</label>
+                        <select class="form-control" ng-model="job.functionalArea">
+                            <option value="1">Administrative</option>
+                            <option value="2">Analytics</option>
+                            <option value="3">BPO/Customer Service</option>
+                            <option value="4">Business Development</option>
+                            <option value="5">Consulting</option>
+                            <option value="6">Content Development</option>
+                            <option value="7">Finance & Accounts</option>
+                            <option value="8">General Management</option>
+                            <option value="9">Graphic designer or Animator</option>
+                            <option value="10">Heathcare</option>
+                            <option value="11">Human Resources</option>
+                            <option value="12">Legal</option>
+                            <option value="13">Operations and Supply chain</option>
+                            <option value="14">Others</option>
+                            <option value="15">Production or Manufracturing or Engineering</option>
+                            <option value="16">Research and Development</option>
+                            <option value="17">Sales and Marketing</option>
+                            <option value="18">Teaching or Education</option>
+                            <option value="19">Technology-IT and Systems</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>Job Nature</label><span style="color:red">*</span><br />
+                        <div class="form-group">
+                            <label class="radio-inline">
+                                <input type="radio" name="jobNature" id="jobnature1" value="Full"  ng-model="job.jobNature">Full Time
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="jobNature" id="jobNature2" value="Part"  ng-model="job.jobNature" />Part Time
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>Gender Prefrence</label><span style="color:red">*</span><br />
+                        <div class="form-group">
+                            <label class="radio-inline">
+                                <input type="radio" name="gender" id="gender1" value="Male"  ng-model="job.gender" />Male
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="gender" id="gender2" value="Female" ng-model="job.gender" >Female
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="gender" id="gender2" value="Others" ng-model="job.gender" >Others
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Interview Details
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <label>Direct Lineup</label>
+                    <div class="form-group">
+                        <label class="radio-inline">
+                            <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="Yes" ng-model="job.directLineup">Yes
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="No"ng-model="job.directLineup">No
+                        </label>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <label>Email of contact person</label>
+                    <input class="form-control"  ng-model="job.email" />
+                </div>
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-lg-12">
+
+                    <div class="form-group">
+                        <label>
+                            Sourcing and Screening Guidelines
+                        </label>
+                        <div id="screening">
+                            {{job.sourcing}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="form-group">
+                        <label for="interviewAddress">Interview Address</label>
+                        <textarea class="form-control" rows="5" id="interviewAdress" ng-model="job.interviewAddress"></textarea>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="panel-footer">
+            <input type="submit" class="btn btn-success" value="Create JD" />
+        </div>
+    </div>
+</form>
+<script>
+    $(document).ready(function () {
+        $('#additional').summernote({
+
+
+            height: 200,                 // set editor height
+            minHeight: null,      // set minimum height of editor
+            maxHeight: null,             // set maximum height of editor
+            focus: false                  // set focus to editable area after initializing summernote
+        });
+    });
+    $(document).ready(function () {
+        $('#duties').summernote({
+
+
+            height: 200,                 // set editor height
+            minHeight: null,      // set minimum height of editor
+            maxHeight: null,             // set maximum height of editor
+            focus: false                  // set focus to editable area after initializing summernote
+        });
+    });
+    $(document).ready(function () {
+        $('#screening').summernote({
+
+
+            height: 200,                 // set editor height
+            minHeight: null,      // set minimum height of editor
+            maxHeight: null,             // set maximum height of editor
+            focus: false                  // set focus to editable area after initializing summernote
+        });
+    });
+</script>

@@ -1,0 +1,17 @@
+<div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Dashboard</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <stats number="&nbsp" comments="Upload JD" colour="primary" type="upload" goto="dashboard.newjd" details="Upload a new JD"></stats>
+        <stats number={{newCandidates}} comments="New Candidates!" colour="green" type="user" goto="dashboard.newCandidates" details="View Details"></stats>
+        <stats number="{{upcomingInterviews}}" comments="Upcoming Interviews" colour="yellow" type="user-secret" goto="dashboard.calender" details="View Details"></stats>
+        <stats number="&nbsp" comments="Statistics" colour="red" type="line-chart" goto="dashboard.statistics" details="View Details"></stats>
+    </div>
+
+    <!-- /.panel -->
+</div>
