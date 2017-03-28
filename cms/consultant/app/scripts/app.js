@@ -10,11 +10,11 @@
 
 angular
   .module('sbAdminApp', [
-    
+
     'oc.lazyLoad',
     'ui.router',
-    'ui.bootstrap',   
-    'ui.toggle' 
+    'ui.bootstrap',
+    'ui.toggle'
   ])
   .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
 
@@ -311,6 +311,29 @@ angular
                 }
             }
         })
+
+//COnsultant view
+
+      .state('dashboard.newCv', {        //for posting/uploading new job description
+          templateUrl: 'views/newCv.html',
+          url: '/newCv',
+          controller: 'newCvController',
+          resolve: {
+              loadMyFile: function ($ocLazyLoad) {
+                  return $ocLazyLoad.load({
+                      name: 'sbAdminApp',
+                      files: ['scripts/controllers/newCvController.js',
+
+                     'scripts/directives/enterEvent/enterEvent.js'
+
+
+                      ]
+                  })
+
+              }
+          }
+      })
+
 
 
   }]);

@@ -215,6 +215,78 @@
     <Content Include="company\app\views\ui-elements\panels-wells.html" />
     <Content Include="company\app\views\ui-elements\typography.html" />
     <Content Include="company\app\views\viewJd.html" />
+    <Content Include="consultant\app\404.html" />
+    <Content Include="consultant\app\bridges.jpg" />
+    <Content Include="consultant\app\favicon.ico" />
+    <Content Include="consultant\app\hand-shake.png" />
+    <Content Include="consultant\app\index.html" />
+    <Content Include="consultant\app\js\sb-admin-2.js" />
+    <Content Include="consultant\app\robots.txt" />
+    <Content Include="consultant\app\scripts\app.js" />
+    <Content Include="consultant\app\scripts\controllers\main.js" />
+    <Content Include="consultant\app\scripts\controllers\newCvController.js" />
+    <Content Include="consultant\app\scripts\controllers\positionsController.js" />
+    <Content Include="consultant\app\scripts\directives\chat\chat.html" />
+    <Content Include="consultant\app\scripts\directives\chat\chat.js" />
+    <Content Include="consultant\app\scripts\directives\dashboard\stats\stats.html" />
+    <Content Include="consultant\app\scripts\directives\dashboard\stats\stats.js" />
+    <Content Include="consultant\app\scripts\directives\enterEvent\enterEvent.js" />
+    <Content Include="consultant\app\scripts\directives\header\header-notification\header-notification.html" />
+    <Content Include="consultant\app\scripts\directives\header\header-notification\header-notification.js" />
+    <Content Include="consultant\app\scripts\directives\header\header.html" />
+    <Content Include="consultant\app\scripts\directives\header\header.js" />
+    <Content Include="consultant\app\scripts\directives\notifications\notifications.html" />
+    <Content Include="consultant\app\scripts\directives\notifications\notifications.js" />
+    <Content Include="consultant\app\scripts\directives\sidebar\sidebar-search\sidebar-search.html" />
+    <Content Include="consultant\app\scripts\directives\sidebar\sidebar-search\sidebar-search.js" />
+    <Content Include="consultant\app\scripts\directives\sidebar\sidebar.html" />
+    <Content Include="consultant\app\scripts\directives\sidebar\sidebar.js" />
+    <Content Include="consultant\app\scripts\directives\timeline\timeline.html" />
+    <Content Include="consultant\app\scripts\directives\timeline\timeline.js" />
+    <Content Include="consultant\app\styles\main.css" />
+    <Content Include="consultant\app\styles\sb-admin-2.css" />
+    <Content Include="consultant\app\vendor\css\angular-bootstrap-toggle.min.css" />
+    <Content Include="consultant\app\vendor\css\angular-toggle-switch.css" />
+    <Content Include="consultant\app\vendor\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="consultant\app\vendor\css\bootstrap-toggle.min.css" />
+    <Content Include="consultant\app\vendor\css\bootstrap.min.css" />
+    <Content Include="consultant\app\vendor\css\font-awesome.min.css" />
+    <Content Include="consultant\app\vendor\css\metisMenu.min.css" />
+    <Content Include="consultant\app\vendor\css\summernote.css" />
+    <Content Include="consultant\app\vendor\fonts\fontawesome-webfont.svg" />
+    <Content Include="consultant\app\vendor\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="consultant\app\vendor\js\angular-animate.js" />
+    <Content Include="consultant\app\vendor\js\angular-animate.min.js" />
+    <Content Include="consultant\app\vendor\js\angular-bootstrap-toggle.min.js" />
+    <Content Include="consultant\app\vendor\js\angular-cookies.js" />
+    <Content Include="consultant\app\vendor\js\angular-resource.js" />
+    <Content Include="consultant\app\vendor\js\angular-toggle-switch.min.js" />
+    <Content Include="consultant\app\vendor\js\angular-touch.js" />
+    <Content Include="consultant\app\vendor\js\angular-ui-router.min.js" />
+    <Content Include="consultant\app\vendor\js\angular.min.js" />
+    <Content Include="consultant\app\vendor\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="consultant\app\vendor\js\bootstrap-toggle.min.js" />
+    <Content Include="consultant\app\vendor\js\bootstrap.min.js" />
+    <Content Include="consultant\app\vendor\js\jquery.min.js" />
+    <Content Include="consultant\app\vendor\js\json3.min.js" />
+    <Content Include="consultant\app\vendor\js\metisMenu.min.js" />
+    <Content Include="consultant\app\vendor\js\moment.min.js" />
+    <Content Include="consultant\app\vendor\js\ocLazyLoad.min.js" />
+    <Content Include="consultant\app\vendor\js\summernote.js" />
+    <Content Include="consultant\app\vendor\js\summernote.min.js" />
+    <Content Include="consultant\app\vendor\js\ui-bootstrap-tpls.min.js" />
+    <Content Include="consultant\app\views\dashboard\home.html" />
+    <Content Include="consultant\app\views\dashboard\main.html" />
+    <Content Include="consultant\app\views\dashboard\pages\blank.html" />
+    <Content Include="consultant\app\views\dashboard\pages\login.html" />
+    <Content Include="consultant\app\views\newCv.html" />
+    <Content Include="consultant\app\views\positions.html" />
+    <Content Include="consultant\app\views\ui-elements\buttons.html" />
+    <Content Include="consultant\app\views\ui-elements\grid.html" />
+    <Content Include="consultant\app\views\ui-elements\icons.html" />
+    <Content Include="consultant\app\views\ui-elements\notifications.html" />
+    <Content Include="consultant\app\views\ui-elements\panels-wells.html" />
+    <Content Include="consultant\app\views\ui-elements\typography.html" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -239,6 +311,20 @@
     <Content Include="company\app\vendor\css\font\summernote.eot" />
     <Content Include="company\app\vendor\css\font\summernote.ttf" />
     <Content Include="company\app\vendor\css\font\summernote.woff" />
+    <Content Include="consultant\app\.htaccess" />
+    <Content Include="consultant\app\vendor\css\font\summernote.eot" />
+    <Content Include="consultant\app\vendor\css\font\summernote.ttf" />
+    <Content Include="consultant\app\vendor\css\font\summernote.woff" />
+    <Content Include="consultant\app\vendor\fonts\fontawesome-webfont.eot" />
+    <Content Include="consultant\app\vendor\fonts\fontawesome-webfont.ttf" />
+    <Content Include="consultant\app\vendor\fonts\fontawesome-webfont.woff" />
+    <Content Include="consultant\app\vendor\fonts\fontawesome-webfont.woff2" />
+    <Content Include="consultant\app\vendor\fonts\FontAwesome.otf" />
+    <Content Include="consultant\app\vendor\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="consultant\app\vendor\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="consultant\app\vendor\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="consultant\app\vendor\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="consultant\app\views\.buildignore" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -256,7 +342,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="consultant\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <PropertyGroup>
