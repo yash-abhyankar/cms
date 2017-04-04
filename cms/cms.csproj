@@ -226,6 +226,7 @@
     <Content Include="consultant\app\scripts\controllers\main.js" />
     <Content Include="consultant\app\scripts\controllers\newCvController.js" />
     <Content Include="consultant\app\scripts\controllers\positionsController.js" />
+    <Content Include="consultant\app\scripts\controllers\viewJdController.js" />
     <Content Include="consultant\app\scripts\directives\chat\chat.html" />
     <Content Include="consultant\app\scripts\directives\chat\chat.js" />
     <Content Include="consultant\app\scripts\directives\dashboard\stats\stats.html" />
@@ -287,6 +288,7 @@
     <Content Include="consultant\app\views\ui-elements\notifications.html" />
     <Content Include="consultant\app\views\ui-elements\panels-wells.html" />
     <Content Include="consultant\app\views\ui-elements\typography.html" />
+    <Content Include="consultant\app\views\viewJd.html" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

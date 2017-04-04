@@ -113,7 +113,7 @@ td {
 
 /* for candiate.htm page */
 .icon {
-    font-size:x-large;
+    font-size: x-large;
     margin-top: 10px;
     color: cornflowerblue;
 }
@@ -126,14 +126,21 @@ td {
 /* for animation*/
 
 .fade.ng-enter {
-  transition:0.5s linear all;
-  opacity:0;
+    transition: 0.5s linear all;
+    opacity: 0;
 }
 
-/* The finishing CSS styles for the enter animation */
-.fade.ng-enter.ng-enter-active {
-  opacity:1;
+    /* The finishing CSS styles for the enter animation */
+    .fade.ng-enter.ng-enter-active {
+        opacity: 1;
+    }
+
+.action-items:hover {
+    background-color:lightgray;
 }
+
+
+
 
 /* Have to set height explicity on ui-view 
 to prevent collapsing during animation

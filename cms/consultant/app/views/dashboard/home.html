@@ -1,16 +1,71 @@
 <div>
     <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Dashboard</h1>
+        <div class="col-lg-12 text-primary">
+            <h1 class="page-header"><i class="fa fa-user"></i> Hi, <em>{{consultant}}</em></h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
     <!-- /.row -->
     <div class="row">
-        <stats number="&nbsp" comments="Upload JD" colour="primary" type="upload" goto="dashboard.newjd" details="Upload a new JD"></stats>
-        <stats number={{newCandidates}} comments="New Candidates!" colour="green" type="user" goto="dashboard.newCandidates" details="View Details"></stats>
-        <stats number="{{upcomingInterviews}}" comments="Upcoming Interviews" colour="yellow" type="user-secret" goto="dashboard.calender" details="View Details"></stats>
-        <stats number="&nbsp" comments="Statistics" colour="red" type="line-chart" goto="dashboard.statistics" details="View Details"></stats>
+        <div class="col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading"><b>Actions</b><a ui-sref="dashboard.home" class="btn btn-primary btn-xs pull-right">View</a></div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6 action-items">
+                            <a class="myclass" href="/applicants?status=All&amp;sid=6"><h1 class="text-center ng-binding">{{screeningHold}}</h1><p class="text-center ng-binding">Screening Hold</p></a>
+                        </div>
+                        <div class="col-lg-6 action-items">
+                            <a href="/applicants?status=All&amp;sid=6"><h1 class="text-center ng-binding">{{schedulingAttempted}}</h1><p class="text-center ng-binding">Scheduling Attempted</p></a>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6 action-items">
+                            <a href="/applicants?status=All&amp;sid=6"><h1 class="text-center ">{{screeningAttempted}}</h1><p class="text-center ng-binding">Screening Attempted</p></a>
+                        </div>
+                        <div class="col-lg-6 action-items">
+                            <a href="/applicants?status=All&amp;sid=6"><h1 class="text-center">{{awaitingInput}}</h1><p class="text-center ng-binding">Awaiting Candidate Input</p></a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Panel Header</div>
+                <div class="panel-body">Panel Content</div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-6">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">Panel Header</div>
+                <div class="panel-body">Panel Content</div>
+            </div>
+
+
+        </div>
+
+        <div class="col-lg-6">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">Panel Header</div>
+                <div class="panel-body">Panel Content</div>
+            </div>
+
+
+
+        </div>
     </div>
 
     <!-- /.panel -->

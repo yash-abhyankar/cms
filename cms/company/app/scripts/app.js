@@ -13,7 +13,8 @@ angular
     
     'oc.lazyLoad',
     'ui.router',
-    'ui.bootstrap',   
+    'ui.bootstrap',
+        
     'ui.toggle' 
   ])
   .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {

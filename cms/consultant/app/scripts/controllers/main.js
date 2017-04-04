@@ -10,6 +10,10 @@ angular.module('sbAdminApp')
   .controller('MainCtrl', function ($scope, $position) {
 
 
-      $scope.newCandidates = 18;
-      $scope.upcomingInterviews = 3;
+      $scope.consultant = "Yash";
+      //compute from db
+      $scope.screeningHold = 5;
+      $scope.schedulingAttempted = 6;
+      $scope.screeningAttempted = 2;
+      $scope.awaitingInput = 3;
   });

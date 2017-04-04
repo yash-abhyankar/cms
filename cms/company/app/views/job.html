@@ -7,7 +7,7 @@
             <span style="padding-left:10px"><i class="fa fa-inr" style="font-size:18px"></i> {{job.salaryRange}}</span>
             <span style="padding-left:10px"><i class="fa fa-line-chart" style="font-size:18px"></i> {{job.experience}}</span>
             <span style="padding-left:10px"><i class="fa fa-users" style="font-size:18px"></i> Vacancy {{job.vacancy}}</span>
-            <span class="text-success" style="margin-left:10px;border-radius:10px;border:1px solid green;padding: 3px 10px; ">
+            <span  ng-attr-class="{{job.status=='Open' && 'text-success'|| 'text-danger'}}" style="margin-left:10px;border-radius:10px;border:1px solid green;padding: 3px 10px; ">
                 {{job.status}}
             </span>
 

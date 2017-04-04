@@ -14,7 +14,8 @@ angular
     'oc.lazyLoad',
     'ui.router',
     'ui.bootstrap',
-    'ui.toggle'
+    'ui.toggle',
+    'ngFileUpload'
   ])
   .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
 
@@ -129,20 +130,20 @@ angular
 
 
 
-        .state('dashboard.job', {
-            templateUrl: 'views/job.html',
-            url: '/job/:jobId',
-            controller: 'jobController',
-            resolve: {
-                loadMyFile: function ($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: 'sbAdminApp',
-                        files: ['scripts/controllers/jobController.js']
-                    })
+        //.state('dashboard.job', {
+        //    templateUrl: 'views/job.html',
+        //    url: '/job/:jobId',
+        //    controller: 'jobController',
+        //    resolve: {
+        //        loadMyFile: function ($ocLazyLoad) {
+        //            return $ocLazyLoad.load({
+        //                name: 'sbAdminApp',
+        //                files: ['scripts/controllers/jobController.js']
+        //            })
 
-                }
-            }
-        })
+        //        }
+        //    }
+        //})
           .state('dashboard.downloadCV', {
               templateUrl: 'views/downloadCV.html',
               url: '/downloadCV/:candidateId',
@@ -316,7 +317,7 @@ angular
 
       .state('dashboard.newCv', {        //for posting/uploading new job description
           templateUrl: 'views/newCv.html',
-          url: '/newCv',
+          url: '/newCv/:jdId',
           controller: 'newCvController',
           resolve: {
               loadMyFile: function ($ocLazyLoad) {

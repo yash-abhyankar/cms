@@ -1,5 +1,4 @@
-﻿
-<div ng-controller="positionsController">
+﻿<div ng-controller="positionsController">
 
 
     <div class="row">
@@ -35,20 +34,20 @@
 
             </tr>
         </thead>
-        <tr ng-repeat="job in jd">
+        <tr style="color:blueviolet" ng-repeat="job in jd">
 
             <td>{{job.client}} </td>
             <td>
-                <a ui-sref="dashboard.job({jobId:job.id})"></a>  {{job.position}}
+            <a ui-sref="dashboard.viewJd({jdId:job.id})">{{job.position}}</a>  
+            </td>
 
-             </td>
-
+            <td>{{job.location}}</td>
             <td>{{job.ctc}}</td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{{job.priority}}</td>
+            <td>{{job.score}}</td>
+            <td><input type="radio" name="{{job.id}}status" value="Accepted" ng-model="job.jdStatus" /></td>
+            <td><input type="radio" name="{{job.id}}status" value="Rejected" ng-model="job.jdStatus" /></td>
+            <!--<td><button type="button" ng-click="printJobs(job.id)" >click</button> </td>-->
         </tr>
 
 
